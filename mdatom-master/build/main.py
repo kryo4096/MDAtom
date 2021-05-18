@@ -1,5 +1,7 @@
 import os 
 
+import subprocess
+
 def clear_folder(path):
     if os.path.isdir(path):
             for element in os.listdir(path):
@@ -48,6 +50,7 @@ if __name__ == "__main__":
     os.system(f"mkdir {folder}")
     os.system("cmake ..")
     os.system("make")
+
     
     os.system(f"./mdatom {input_file} {coordinate_file} > {output_file}")
     

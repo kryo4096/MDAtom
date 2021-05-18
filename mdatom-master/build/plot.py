@@ -12,11 +12,12 @@ def plot_radial(file):
 
 
 def plot_energy(file):
-    energies = pd.read_fwf(file, header=None, widths=[15]*8, names = ["STEP", "TIME", "E-TOTAL", "E-KINETIC", "E-POTENTIAL", "VIRIAL", "PRESSURE", "SCALE-T"])
+    energies = pd.read_fwf(file, header=None, widths=[15]*8, names = ["STEP", "TIME", "E-TOTAL", "E-KINETIC", "E-POTENTIAL", "VIRIAL", "PRESSURE", "SCALE-T"]) 
     plt.figure()
 
     t = energies['TIME'].to_list()
     
+
     plt.plot(t, energies['E-TOTAL'].to_list(), color='r', label="E-TOTAL")
     plt.plot(t, energies['E-KINETIC'].to_list(), color='g', label="E-KINETIC")
     plt.plot(t, energies['E-POTENTIAL'].to_list(), color='b', label="E-POTENTIAL")
