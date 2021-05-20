@@ -43,7 +43,8 @@ void InteractionCalculator::resetVariablesToZero(std::vector<double> &forces) {
 
 void InteractionCalculator::calculateInteraction(int i, int j, const std::vector<double> &positions,
                                                  std::vector<double> &forces) {
-    applyPeriodicBoundaryConditions(i, j, positions);
+    //applyPeriodicBoundaryConditions(i, j, positions);
+    applyHardwallBoundaryConditions(i, j, positions);
     calculateSquaredDistance();
     if (rij2 < rcutf2) {
         calculatePotentialAndForceMagnitude();
@@ -51,6 +52,13 @@ void InteractionCalculator::calculateInteraction(int i, int j, const std::vector
         calculateForceAndVirialContributions(i, j, forces);
     }
     radialDistribution.addPairAtSquaredDistance(rij2);
+}
+
+//Added hard-wall boundary option
+void InteractionCalculator::applyHardwallBoundaryConditions(int i, int j, const std::vector<double> &positions) {
+    for(int m = 0; m < 3; m++) {
+        xij[m] = positions[3*i + m] - positions[3*j + m];
+    }
 }
 
 void InteractionCalculator::applyPeriodicBoundaryConditions(int i, int j, const std::vector<double> &positions) {

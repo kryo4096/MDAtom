@@ -31,6 +31,8 @@ private:
 
     void resetVariablesToZero(std::vector<double> &forces);
 
+    void applyHardwallBoundaryConditions(int i, int j, const std::vector<double> &positions);
+
     void applyPeriodicBoundaryConditions(int i, int j, const std::vector<double> &positions);
 
     void calculateSquaredDistance();
