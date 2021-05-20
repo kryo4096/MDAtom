@@ -80,8 +80,8 @@ void MDRun::initializeTemperature(const std::vector<double> &velocities) {
 void MDRun::performStep(std::vector<double> &positions, std::vector<double> &velocities, int nstep, double time) {
     /* put atoms in central periodic box */
 
-    //PeriodicBoundaryConditions::recenterAtoms(par.numberAtoms, positions, par.boxSize);
-    HardwallBoundaryConditions::adjustBoundary(par.numberAtoms, par.timeStep, positions, velocities, par.boxSize);
+    PeriodicBoundaryConditions::recenterAtoms(par.numberAtoms, positions, par.boxSize);
+    //HardwallBoundaryConditions::adjustBoundary(par.numberAtoms, par.timeStep, positions, velocities, par.boxSize);
 
 
     /* calculate forces, potential energy, virial

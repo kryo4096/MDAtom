@@ -98,7 +98,9 @@ void TrajectoryFileWriter::writeOutTrajectoryStepInAsciiForm(const std::vector<d
     int ntot = 3 * par.numberAtoms;
     for (int i = 0; i < ntot; i += 10) {
         for (int j = i; (j < i + 10 && j < ntot); j++) {
-            fileFW << setw(10) << positions[j];
+            //fileFW << setw(10) << positions[j]; Inconvenient for the drawing program as width can be 10 if there is a minus
+            fileFW << positions[j];
+            if(j+1 < i + 10 && j+1 < ntot)fileFW << ","; 
         }
         fileFW << endl;
     }

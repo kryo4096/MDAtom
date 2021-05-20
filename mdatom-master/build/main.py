@@ -34,12 +34,15 @@ if __name__ == "__main__":
  
     input_file = folder + "input.txt"
     coordinate_file = folder + "coord.txt"
+    trajectories_file = "coords.traj"
 
     output_file = directory + "_output"
 
     energies_output = directory + "_energies"
 
     radial_distr_output = directory + "_radial_distr"
+
+    
 
 
     print("Hello User, welcome to the MD-Atom Simulation. \nRemember to set the correct files in the main.py file.\nEnjoy!\n")
@@ -53,6 +56,8 @@ if __name__ == "__main__":
 
     
     os.system(f"./mdatom {input_file} {coordinate_file} > {output_file}")
+
+    os.system(f"python draw.py {trajectories_file}")
     
     os.system(f"python energy.py {output_file} > {energies_output}")
 
@@ -61,6 +66,8 @@ if __name__ == "__main__":
     os.system(f"python plot.py {radial_distr_output} -r")
 
     os.system(f"python plot.py {energies_output} -e")
+
+    
 
     
 

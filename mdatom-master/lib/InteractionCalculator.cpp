@@ -43,8 +43,8 @@ void InteractionCalculator::resetVariablesToZero(std::vector<double> &forces) {
 
 void InteractionCalculator::calculateInteraction(int i, int j, const std::vector<double> &positions,
                                                  std::vector<double> &forces) {
-    //applyPeriodicBoundaryConditions(i, j, positions);
-    applyHardwallBoundaryConditions(i, j, positions);
+    applyPeriodicBoundaryConditions(i, j, positions);
+    //applyHardwallBoundaryConditions(i, j, positions);
     calculateSquaredDistance();
     if (rij2 < rcutf2) {
         calculatePotentialAndForceMagnitude();
