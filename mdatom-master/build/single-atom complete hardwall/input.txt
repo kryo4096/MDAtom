@@ -1,19 +1,19 @@
 # Title
 Test 4, 1000 atoms different config
 #                 NumberAtoms                 AtomicMass                     MDType
-                        10000                          1                          0
+                         1000                          1                          0
 #                  BoxSize(x)                 BoxSize(y)                 BoxSize(z)
-                      100.436                    100.436                    100.436
+                       10.436                     10.436                     10.436
 #               NumberMDSteps                InitialTime                   TimeStep
                          1000                          0                      0.005
 #          InitialTemperature          TargetTemperature    TemperatureCouplingTime
-                          120                     120.27                        0.1
+                          0.0                     120.27                        0.1
 #                  RandomSeed
                      10021988
 #            XVInitialization  CoordInitializationSpread              FinalXVOutput
-                            0                          0                          1
+                            3                          0                          1
 #          NAtomsOnBoxEdge(x)         NAtomsOnBoxEdge(y)         NAtomsOnBoxEdge(z)
-                           22                         22                         22
+                           10                         10                         10
 #                   EpsilonLJ                    SigmaLJ    InteractionCutoffRadius
                             1                          1                        2.5
 #    PropertyPrintingInterval    NumberRadialDistrPoints    RadialDistrCutoffRadius
